@@ -1,5 +1,8 @@
 # CodebridgeTestTask
 
+This project is a CodeBridge test exercise, in which I wrote an Angular application designed to manage articles, including listing and viewing individual articles. It contains routing configurations for navigating between different views.
+Stru
+
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 17.1.0.
 
 ## Development server

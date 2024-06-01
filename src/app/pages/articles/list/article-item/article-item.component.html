@@ -1,0 +1,23 @@
+<section class="article-section" [routerLink]="article?.id + '/view'">
+  <div class="thumbnail-wrapper">
+    <img class="thumbnail" [src]="article?.image_url" alt="Article photo" />
+  </div>
+  <div class="article-info-section">
+    <div class="published-section">
+      <mat-icon class="material-symbols-outlined calendar-icon">
+        calendar_today
+      </mat-icon>
+      <span class="published-date">{{
+        article?.published_at | date : "MMMM d, y"
+      }}</span>
+    </div>
+    <h3 class="title" [innerHTML]="article?.title"></h3>
+    <p class="summary" [innerHTML]="article?.summary"></p>
+    <a class="read-more"
+      >Read more
+      <mat-icon class="material-symbols-outlined arrow-icon">
+        arrow_right_alt
+      </mat-icon></a
+    >
+  </div>
+</section>

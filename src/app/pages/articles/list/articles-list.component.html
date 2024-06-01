@@ -1,0 +1,34 @@
+<div class="main-wrapper">
+  <section class="filter-section">
+    <p class="filter-label">Filter by keywords</p>
+    <!-- search input must be reusable block -->
+    <div class="search-input-section">
+      <mat-icon class="material-symbols-outlined search-icon">search</mat-icon>
+      <input
+        [(ngModel)]="searchInput"
+        type="text"
+        placeholder="Search..."
+        class="search-bar"
+      />
+    </div>
+  </section>
+
+  <section class="results-section">
+    <p class="results-label">Results: {{ filteredArticles().length }}</p>
+    <hr style="border-top: 1px solid #eaeaea; margin-top: 0.15rem" />
+  </section>
+
+  <section *ngIf="articles().length" class="articles-grid-section">
+    <app-article-item
+      *ngFor="
+        let article of articles()
+          | filterArticles : searchInput()
+          | highlighter : searchInput()
+      "
+      [article]="article"
+    ></app-article-item>
+  </section>
+  <div *ngIf="!articles().length" class="spinner-section">
+    <mat-spinner></mat-spinner>
+  </div>
+</div>
